@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBox from './SearchBox';
 import MovieHtml from './generateMovie';
+import UpComingMovie from './generateCarousal';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-theme.css';
 
@@ -11,9 +12,19 @@ class App extends Component {
         super(props);
         this.state={
             movieID:"472123",
-            movieDetail:""
+            movieDetail:"",
+            upcomingMovies:""
         }
         this.fetchMovieDetail=this.fetchMovieDetail.bind(this);
+        this.fetchUpComingMovie=this.fetchUpComingMovie.bind(this);
+    }
+    fetchUpComingMovie(){
+       var url="https://api.themoviedb.org/3/movie/upcoming?&api_key=cfe422613b250f702980a3bbf9e90716";
+        fetch(url).then((res) => res.json()).then((data) => {
+             this.setState({
+                 upcomingMovies:data.results
+             });
+        });
     }
     fetchMovieDetail(movieId){        
         var url=`https://api.themoviedb.org/3/movie/${movieId}?&api_key=cfe422613b250f702980a3bbf9e90716`;
@@ -42,7 +53,8 @@ class App extends Component {
     }
     componentDidMount(){
         let movieId=this.state.movieID;
-        this.fetchMovieDetail(movieId);
+        //this.fetchMovieDetail(movieId);
+        this.fetchUpComingMovie();
     }
   render() {
     return (
@@ -53,7 +65,8 @@ class App extends Component {
         </header>
         <div className="main-wrapper">
         <SearchBox loadMovie={this.fetchMovieDetail}/>
-        <MovieHtml data={this.state.movieDetail}></MovieHtml>
+        {this.state.movieDetail!=""?<MovieHtml data={this.state.movieDetail}></MovieHtml>:""}
+        {this.state.upcomingMovies!=""?<UpComingMovie data={this.state.upcomingMovies}></UpComingMovie>:""}
         </div>
       </div>
     );

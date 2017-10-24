@@ -119,6 +119,17 @@
     font-size: 15px;
     font-weight: 400;
 }
+.carousal-wrapper{
+    height:300px;
+}
+.carousal-wrapper .carousel-slider{
+    height: 100%;
+}
+.carousal-wrapper .carousel  .slide img{
+    height: 300px;
+    width: 300px;
+    float: left;
+}
 
 @-webkit-keyframes App-logo-spin {
   from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
