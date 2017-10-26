@@ -52,9 +52,7 @@ class App extends Component {
         })
     }
     componentDidMount(){
-        let movieId=this.state.movieID;
-        //this.fetchMovieDetail(movieId);
-        this.fetchUpComingMovie();
+               this.fetchUpComingMovie();
     }
   render() {
     return (
@@ -66,6 +64,7 @@ class App extends Component {
         <div className="main-wrapper">
         <SearchBox loadMovie={this.fetchMovieDetail}/>
         {this.state.movieDetail!=""?<MovieHtml data={this.state.movieDetail}></MovieHtml>:""}
+        <div className="row upcoming-movie-list">Upcoming movies</div>
         {this.state.upcomingMovies!=""?<UpComingMovie data={this.state.upcomingMovies}></UpComingMovie>:""}
         </div>
       </div>

@@ -10,12 +10,18 @@ class Search extends Component{
         }
         this.handleChange=this.handleChange.bind(this);
         this.searchMovieList=this.searchMovieList.bind(this);
+        this.clearMovie=this.clearMovie.bind(this);
     }
     handleChange(e){
         this.setState({
             searchTxt:e.target.value
         });
         this.searchMovieList(e.target.value);
+    }
+    clearMovie(){
+        this.setState({
+                searchResult:''
+        })
     }
     searchMovieList(queryParameter){
         queryParameter=queryParameter.trim();
@@ -35,7 +41,7 @@ class Search extends Component{
         return (
             <div className=" row search-wrapper">
                 <input type="text" className="form-control" onChange={this.handleChange} placeholder="search by movie name" />
-               {this.state.searchResult!=''?<ListGenerator loadMovie={this.props.loadMovie} movielist={this.state.searchResult}></ListGenerator>:<ListGenerator/>}
+               {this.state.searchResult!=''?<ListGenerator loadMovie={this.props.loadMovie} movielist={this.state.searchResult} clearMovieResult={this.clearMovie}></ListGenerator>:<ListGenerator/>}
             </div>
             
         );

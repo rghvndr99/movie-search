@@ -1,0 +1,89 @@
+/* Colors */
+$black: #000;
+$dark-gray: #aaa;
+$dim-gray: #666;
+$dim-gray2: #707070;
+$light-gray: #ccc;
+$white-smoke: #efefef;
+$white: #fff;
+$blue: #0033ff;
+$gainsboro: #DCDCDC;
+$cadillac: #9C4D85;
+$double-colonial-white : #E1CE96;
+$putty : #CFB56A;
+$harley-davidson-orange: #d11c1c;
+$cocoa-brown: #312111;
+$baker-chocolate: #3c1c0d;
+$free-speech-red: #BE2000;
+$sanguine-brown: #693b37;
+$clinker: #4d3722;
+$brown-pod: #3c1c0d;
+$night-rider: #333;
+$sangria: #990000;
+$dim-gray: #707070;
+$paco: #3c1c0d;
+$cocoa-brown: #3d2712;
+$laser: #cfb56a;
+$pale-oyster: #9c8b7a;
+$saddle: #4d3722;
+$driftwood: #a08948;
+$green:#79a340;
+$darkGreen:#4d721b;
+$teak: #a38d50;
+$Chalky: #DFC781;
+$lightYellow:#dfc781;
+$sandwisp: #e6cc7f;
+$yellow: #ffff00;
+$link-water: #D6D7D8;
+$carrot-orange: #f78e25;
+$indian-tan: #502E1F;
+$very-light-grey: #a7aca8;
+$error-red:#cb0c34;
+$whisper: #eeeeee;
+$pink: #f0004f;
+$pink-swan: #b2b2b2;
+$concrete: #D9D9D8;
+$cedar: #472d27;
+$gray1:#8e8e8e;
+$jazzberry-jam: #8d0249;
+$half-dutch-white: #FBF0D1;
+$pompadour: #721243;
+$beige: #f4e0ab;
+$dark-beige: #c2a896;
+$text-brown: #3c1c0d;
+$swan:#0e6060;
+$is-imp: !important;
+
+/* Media queries breakpoints variables */
+$phone: 475px;	
+$mobile: 768px;
+$tablet: 769px;
+$desktop: 1024px;
+$tablet-portrait-DV : 768px;
+
+
+/* Max Width */
+$max-container-width: 1152px; /* Padding Left and Right: 24px, so actual container width is 1200px */  
+
+
+@mixin freight-book{
+	font-family: 'FreightBook', Arial, sans-serif $is-imp;
+}
+/* Example '@include verlag-book;' */
+@mixin freight-light{
+	font-family: 'FreightLight', Arial, sans-serif $is-imp;
+}
+
+@mixin verlag-bold{
+	font-family: 'VerlagBold', Arial, sans-serif $is-imp;
+}
+
+@mixin verlag-book{
+	font-family: 'VerlagBook', Arial, sans-serif $is-imp;
+}
+
+@mixin verlag-light{
+	font-family: 'VerlagLight', Arial, sans-serif $is-imp;
+}
+
+
